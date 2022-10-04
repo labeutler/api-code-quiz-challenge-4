@@ -1,0 +1,44 @@
+html {
+    
+    padding: 50px;
+}
+
+header {
+    color: blue; 
+    font-size: 20px;
+    text-align: left;
+    margin: 10px;
+}
+h1 {
+    color: black;
+    text-shadow: 20px;
+    
+}
+nav {
+    background-image: url("./images/leaves.webp");
+    background-repeat: repeat-y;
+    background-repeat: repeat-x;
+    background-position: center;
+    text-align: center;
+    color:black;
+    padding: 0;
+    border-style:solid;
+    border-width: 15px;
+    border-color: saddlebrown;
+}
+
+button {
+    font-size: 25px;
+    font-weight: 900;
+    background-color: brown;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: solid;
+    border-width: 5px;
+}
+footer {
+    color: orange;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+}
