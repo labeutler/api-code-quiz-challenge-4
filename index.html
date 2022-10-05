@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css" />
+    <script defer src="./assets/script.js"></script>
     <title>Coding Quiz</title>
 </head>
 <header>
     <!-- header to contain link for high scores and timer -->
     <a href="View high scores">View high scores</a>
-    <!-- <p id="countdown">1:00</p> -->
-    
+    <p id="countdown">1:00</p>
+
 </header>
 
 <body>
-    <p id="countdown">1:00</p>
-    <nav>
+    <div id="first">
         <!-- title and description of game -->
         <h1>Coding Quiz</h1>
         <h3>Test your skills with this coding challenge quiz.<br>
@@ -27,9 +27,28 @@
             <br>
             However, for every wrong answer,<br>
             10 seconds will be deducted.<br>
-            Good Luck.</h3>
-        <button>Start</button>
-    </nav>
+            Good Luck.
+        </h3>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+        </div>
+    </div>
+
+    <!-- create containers for question pages -->
+    <div id="second">
+        <div class="container">
+            <div id="question-container" class="hide"></div>
+            <div id="question">Question: What would you use when trying to make your project look nice
+                aesthetically?</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>
+    </div>
+
     <!-- starter page -->
     <!-- click start
             question presents and timer starts
@@ -42,7 +61,7 @@
     <!-- final answer takes you to last page
             Game OVER at last question or time over-->
     <!-- add initials and score will save -->
-        <script src="/assets/script.js"></script>
+
 </body>
 <footer>Created by Laura Beutler</footer>
 
