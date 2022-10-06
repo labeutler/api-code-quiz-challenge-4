@@ -33,13 +33,16 @@ h1 {
     text-shadow: 20px;
 }
 div#first {
-    background-image: url("./images/leaves.webp");
+    /* background-image: url("./images/leaves.webp"); */
+    background-color: sienna;
     background-repeat: repeat-y;
     background-repeat: repeat-x;
-    background-position: center;
+    background-position:center;
+    background-size: contain;
     text-align: center;
     color:black;
     padding: 0;
+    margin-top: 0;
     border-style:solid;
     border-width: 15px;
     border-color: saddlebrown;
@@ -50,14 +53,13 @@ button {
     font-size: 25px;
     font-weight: 900;
     background-color: brown;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 0 50px;
     border: solid;
     border-width: 5px;
 }
 div#second {
     padding: 0;
-    margin: 25px;
+    margin: 15px;
     display:flexbox;
     width: 100vw;
     height: 100vh;
