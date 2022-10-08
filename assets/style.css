@@ -35,18 +35,22 @@ h1 {
 div#first {
     /* background-image: url("./images/leaves.webp"); */
     background-color: sienna;
-    background-repeat: repeat-y;
+    /* background-repeat: repeat-y;
     background-repeat: repeat-x;
     background-position:center;
-    background-size: contain;
-    text-align: center;
+    background-size: contain; */
+    text-align: center; 
     color:black;
     padding: 0;
     margin-top: 0;
     border-style:solid;
     border-width: 15px;
-    border-color: saddlebrown;
-    
+    border-color: saddlebrown;    
+    align-items: center;
+}
+div.container {
+    justify-content: center;
+    align-items: center;
 }
 
 button {
@@ -56,6 +60,19 @@ button {
     padding: 0 50px;
     border: solid;
     border-width: 5px;
+}
+.start-btn {
+    font-size: 25px;
+    font-weight: 900;
+    background-color: brown;
+    padding: 0 50px;
+    border: solid;
+    border-width: 5px;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 div#second {
     padding: 0;
@@ -67,7 +84,7 @@ div#second {
     align-items: center;
 }
 .container {
-    width: 800px;
+    /* width: 800px; */
     max-width: 80%;
     height: 400px;
     border-radius: 5px;
@@ -75,6 +92,10 @@ div#second {
     box-shadow: 0 0 10px 2px;
     background-image: url(./images/mix.jpg);
     content: center;
+    align-items: center;
+}
+.hide {
+    display: none;
 }
 div#question {
     font-size: 50px;

@@ -1,5 +1,7 @@
 //start button
 const startButton = document.getElementById('start-btn')
+//Clicking answer button will take you to next question
+const answerButton = document.getElementById('answer-btn')
 //question container
 const questionContainerElement = document.getElementById ('question-container')
 //question element
@@ -12,6 +14,10 @@ let shuffledQuestions, currentQuestionIndex
 
 //event listener when clicking on the start button
 startButton.addEventListener('click', startGame)
+answerButton.addEventListener('click', () => {
+    currentQuestionIndex++
+    setNextQuestion()
+})
 
 //function when the start of the game begins
 function startGame() {
@@ -25,6 +31,7 @@ function startGame() {
 
 // calling next question and show 
 function setNextQuestion() {
+    resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
@@ -42,13 +49,44 @@ function showQuestion(question) {
         answerButtonsElement.appendChild(button)
     })
 }
+function resetState() {
+    answerButton.classList.add('hide')
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild
+        (answerButtonsElement.firstChild)
+    }
+}
 
 
 const targetDiv = document.getElementById("second");
 
 // Function to select the answer
-function selectAnswer() {
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.deataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatusClass(button, button.deataset.correct)
+    })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    answerButton.classList.remove('hide')
+    } else {
+        startButton.innerText = 'restart'
+        startButton.classList.remove('hide')
+    }
+}
 
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    }
+}
+function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
 }
 
 //create list of questions in the form of an array, with answers as another array.
