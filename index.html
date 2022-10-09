@@ -18,45 +18,56 @@
 
 <body>
     <!-- creating a div for the first slide -->
-    <!-- <div id="first" > -->
-    <!-- create a container for intro -->
-    <div class="container">
-        <!-- create the "hide" of the container -->
-        <div id="question-container" class="hide"></div>
-        <!-- title and description of game -->
-        <h1>Coding Quiz</h1>
-        <h3>Test your skills with this coding challenge quiz.<br>
-            You will have 60 seconds to complete.<br>
-            The faster you complete the quiz,<br>
-            the higher your score will be. <br>
-            <br>
-            However, for every wrong answer,<br>
-            10 seconds will be deducted.<br>
-            Good Luck.
-        </h3>
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
+    <div id="first">
+        <!-- create a container for intro -->
+        <div class="container" >
+            <!-- create the "hide" of the container -->
+            <div id="question-container" class="hide"></div>
+            <!-- title and description of game -->
+            <h1>Coding Quiz</h1>
+            <h3>Test your skills with this coding challenge quiz.<br>
+                You will have 60 seconds to complete.<br>
+                The faster you complete the quiz,<br>
+                the higher your score will be. <br>
+                <br>
+                However, for every wrong answer,<br>
+                10 seconds will be deducted.<br>
+                Good Luck.
+            </h3>
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn">Start</button>
+            </div>
         </div>
     </div>
-    <!-- </div> -->
     <!-- creating a div for the second slide -->
     <!-- create containers for question pages -->
-    <!-- <div id="second"> -->
+    <div id="second" class="hide">
         <div class="container">
             <div id="question-container" class="hide"></div>
             <div id="question">Question:</div>
             <div id="answer-buttons" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
+                <button id="btn1" class="btn">Answer 1</button>
+                <button id="btn2" class="btn">Answer 2</button>
+                <button id="btn3" class="btn">Answer 3</button>
+                <button id="btn4" class="btn">Answer 4</button>
             </div>
         </div>
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
+    </div>
+    <div id="third" class="hide">
+        <!-- create a container for intro -->
+        <div class="container" >
+            <!-- create the "hide" of the container -->
+            <div id="question-container" class="hide"></div>
+            <!-- title and description of game -->
+            <h1>All done:</h1>
+            <h3>Your final score is <br>
+                Enter initials: <br>
+            </h3>
+            <div class="controls">
+                <button id="submit" class="submit-btn btn">Submit</button>
+            </div>
         </div>
-    <!-- </div> -->
-
+    </div>
     <!-- starter page -->
     <!-- click start
             question presents and timer starts
