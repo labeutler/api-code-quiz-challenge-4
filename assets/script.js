@@ -1,13 +1,17 @@
-//start button
+    //start button
 const startButton = document.getElementById('start-btn')
-//Clicking answer button will take you to next question
+    //Clicking answer button will take you to next question
 const answerButton = document.getElementById('answer-buttons')
-//question container
+    //question container
 const questionContainerElement = document.getElementById ('question-container')
-//question element
+    //question element
 const questionElement = document.getElementById('question')
-//answer buttons element
+    //answer buttons element
 const answerButtonsElement = document.getElementById('answer-buttons')
+    //create form document
+const initials = document.querySelector('#initial');
+const score = document.querySelector('#time')
+    
 
 //variable to show our shuffled and current questions
 let shuffledQuestions, currentQuestionIndex
@@ -31,14 +35,13 @@ answerButton.addEventListener('click', function(event){
             displayQuestion()
         }
     }
-
 })
+//create list for high scores
+let initial = document.getElementById('initial').value;
+console.log(initial);
+let time = document.getElementById('time').value;
+console.log(time);
 
-
-// answerButton.addEventListener('click', () => {
-//     currentQuestionIndex++
-//     setNextQuestion()
-// })
 
 //function when the start of the game begins
 function startGame() {
@@ -46,20 +49,18 @@ function startGame() {
     startButton.classList.add('hide')
     document.getElementById('first').classList.add('hide')
     document.getElementById('second').classList.remove('hide')
-    // document.getElementById('second').classList.add('hide')
-    // document.getElementById('third').classList.remove('hide')
-    
-    
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
     //call display question
     displayQuestion()
 }
+
 //display question (make function)
 function displayQuestion() {
     //when no more questions
     if (currentQuestionIndex === questions.length){
         document.getElementById('second').classList.add('hide')
+        document.getElementById('third').classList.remove('hide')
         return
     }
     //target something in HTML
@@ -71,6 +72,18 @@ function displayQuestion() {
     document.getElementById('btn4').innerText = questions [currentQuestionIndex].answer[3]
 }
 
+//Create a function to submit initials for final score
+// function submit() {
+//     console.log ('submit')
+
+// }
+//create a function to unhide final score page and enter initials
+// function endGame() {
+//     console.log('return')
+//     // initialsELement.classList.add('hide')
+//     document.getElementById('second').classList.add('hide')
+//     document.getElementById('third').classList.remove('hide')
+// }
 // calling next question and show 
 // function setNextQuestion() {
 //     resetState()
@@ -91,32 +104,7 @@ function showQuestion(question) {
         answerButtonsElement.appendChild(button)
     })
 }
-// function resetState() {
-//     answerButton.classList.add('hide')
-//     while (answerButtonsElement.firstChild) {
-//         answerButtonsElement.removeChild
-//         (answerButtonsElement.firstChild)
-//     }
-// }
 
-
-// const targetDiv = document.getElementById("second");
-
-// Function to select the answer
-// function selectAnswer(e) {
-//     const selectedButton = e.target
-//     const correct = selectedButton.deataset.correct
-//     setStatusClass(document.body, correct)
-//     Array.from(answerButtonsElement.children).forEach(button => {
-//         setStatusClass(button, button.deataset.correct)
-//     })
-//     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-//     answerButton.classList.remove('hide')
-//     } else {
-//         startButton.innerText = 'restart'
-//         startButton.classList.remove('hide')
-//     }
-// }
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)
@@ -126,10 +114,6 @@ function setStatusClass(element, correct) {
         element.classList.add('wrong')
     }
 }
-// function clearStatusClass(element) {
-//     element.classList.remove('correct')
-//     element.classList.remove('wrong')
-// }
 
 //create list of questions in the form of an array, with answers as another array.
 const questions = [

@@ -60,14 +60,23 @@
             <div id="question-container" class="hide"></div>
             <!-- title and description of game -->
             <h1>All done:</h1>
-            <h3>Your final score is <br>
-                Enter initials: <br>
-            </h3>
+            <form id="highScore">
+                <!-- add initial element for high scores -->
+                <label for="initials">Enter Initials:</label><br>
+                <input type="text" id="initial" initial="initial" placeholer="Your initials.." value=""><br>
+                
+                <!-- add time element for final score -->
+                <label for="score">Your Final Score Is:</label><br>
+                <input type="time" id="time" time="time" value="time">
+                
+                <input type="submit" value="submit">
+            </form>
             <div class="controls">
-                <button id="submit" class="submit-btn btn">Submit</button>
+                <!-- <button id="submit" class="submit-btn btn">Submit</button> -->
             </div>
         </div>
     </div>
+   
     <!-- starter page -->
     <!-- click start
             question presents and timer starts
