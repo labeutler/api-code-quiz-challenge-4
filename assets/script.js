@@ -9,6 +9,7 @@ const questionElement = document.getElementById('question')
     //answer buttons element
 const answerButtonsElement = document.getElementById('answer-buttons')
     //create form document
+const form = document.querySelector('#highScore')
 const initials = document.querySelector('#initial');
 const score = document.querySelector('#time')
     
@@ -18,6 +19,28 @@ let shuffledQuestions, currentQuestionIndex
 
 //event listener when clicking on the start button
 startButton.addEventListener('click', startGame)
+//Add event listener for when start game begins, timer begins
+startButton.addEventListener('click', countDown)
+//countdown timer
+
+
+function countDown() {
+    var timeleft = 60;
+        var downloadTimer = setInterval(function(){
+            if(timeleft <= 0) {
+                clearInterval(downloadTimer);
+                document.getElementById('countdown').innerHTML = 'Finished';
+            } else {
+                document.getElementById('countdown').innerHTML = timeleft + ' seconds';
+            }
+            timeleft -= 1;
+        }, 1000);
+    }
+    // document.getElementById('wrong').addEventListener('click', function() {
+    //     sec -= 5;
+    //     document.getElementById('countDown').innerHTML='00:'+sec;
+    // });
+
 //add event listener for answer buttons
 answerButton.addEventListener('click', function(event){
     console.log(event)
@@ -26,6 +49,7 @@ answerButton.addEventListener('click', function(event){
         var correct = questions[currentQuestionIndex].correct
         if (choice === correct){
             //timer needs to be added here
+            document.getElementById('countdown').innerHTML = 'finished'
             currentQuestionIndex++
             //display next question
             displayQuestion()
@@ -33,13 +57,20 @@ answerButton.addEventListener('click', function(event){
             //timer will need to deduct time here
             currentQuestionIndex++
             displayQuestion()
+            // document.getElementById('wrong').addEventListener('click', function() 
+            {
+                document.getElementById('wrong').innerHTML
+                sec -= 5;
+                document.getElementById('countDown').innerHTML='00:'+sec;
+            }
+            
         }
     }
 })
 //create list for high scores
 let initial = document.getElementById('initial').value;
 console.log(initial);
-let time = document.getElementById('time').value;
+let time = document.getElementById('countDown').value;
 console.log(time);
 
 
@@ -138,26 +169,3 @@ const questions = [
         correct: 'B: []'
     }
 ]
-
-//countdown timer
-// const startingMinutes = 1;
-// let time = startingMinutes * 60;
-
-// const countdownEl = document.getElementById('countdown');
-
-// setInterval(updateCountdown, 1000);
-
-// function updateCountdown() {
-//     const minutes = Math.floor(time / 60);
-//     let seconds = time % 60;
-
-//     countdownEl.innerHTML = '$(minutes):$(seconds)';
-//     time--;
-// }
-
-// document.getElementById("myBtn").addEventListener("click", myFunction);
-
-// function myFunction() {
-//     countdownEl ("1:00");
-// }
-//event listener
