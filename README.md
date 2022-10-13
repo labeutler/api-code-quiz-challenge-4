@@ -4,7 +4,8 @@ Challenge 4 for Web APIs: Code Quiz
 ## Description
 
 Creating a game that follows the below listed Acceptance Criteria.  The game will be timed and wrong answers will be penalized by deducting time from the timer.
-
+Link to the game: https://labeutler.github.io/api-code-quiz-challenge-4/
+Link to my github page: https://github.com/labeutler/api-code-quiz-challenge-4/edit/main/README.md
 ## Acceptance Criteria
 
 GIVEN I am taking a code quiz
@@ -23,7 +24,7 @@ THEN I can save my initials and my score
 
 N/A
 
-## Usage
+## Usage (NEED TO UPDATE)
 
 Provide instructions and examples for use. Include screenshots as needed.
 
