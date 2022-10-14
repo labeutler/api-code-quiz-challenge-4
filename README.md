@@ -6,6 +6,7 @@ Challenge 4 for Web APIs: Code Quiz
 Creating a game that follows the below listed Acceptance Criteria.  The game will be timed and wrong answers will be penalized by deducting time from the timer.
 Link to the game: https://labeutler.github.io/api-code-quiz-challenge-4/
 Link to my github page: https://github.com/labeutler/api-code-quiz-challenge-4/edit/main/README.md
+
 ## Acceptance Criteria
 
 GIVEN I am taking a code quiz
@@ -26,11 +27,18 @@ N/A
 
 ## Usage (NEED TO UPDATE)
 
-Provide instructions and examples for use. Include screenshots as needed.
+When clicking the link to start the game, you are presented with the following screen.
+![alt text](./assets/images/First.png)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+When clicking the start button, the game begins, a question presents and the timer begins to countdown.
+![alt text](./assets/images/Timer.png)
 
-![alt text](assets/images/screenshot.png)
+When you click on an answer, the next question presents imediately after.
+![alt text](./assets/images/NxtQuest.png)
+
+When game is over, you can enter your initials.
+![alt text](./assets/images/Initial.png)
+
 
 ## Credits
 
