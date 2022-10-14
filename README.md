@@ -28,10 +28,10 @@ N/A
 ## Usage (NEED TO UPDATE)
 
 When clicking the link to start the game, you are presented with the following screen.
-![alt text](./assets/images/First.png)
+![alt text](/assets/images/First.png)
 
 When clicking the start button, the game begins, a question presents and the timer begins to countdown.
-![alt text](./assets/images/Timer.png)
+![alt text](./Assets/images/Timer.png)
 
 When you click on an answer, the next question presents imediately after.
 ![alt text](./assets/images/NxtQuest.png)
