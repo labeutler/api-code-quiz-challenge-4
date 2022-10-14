@@ -29,6 +29,7 @@ N/A
 
 When clicking the link to start the game, you are presented with the following screen.
 ![alt text](/assets/images/First.png)
+![alt text](./Assets/images/First.png)
 
 When clicking the start button, the game begins, a question presents and the timer begins to countdown.
 ![alt text](./Assets/images/Timer.png)
