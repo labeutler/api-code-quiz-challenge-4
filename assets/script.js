@@ -1,5 +1,5 @@
    //start button
-   const startButton = document.getElementById('start-btn')
+const startButton = document.getElementById('start-btn')
    //Clicking answer button will take you to next question
 const answerButton = document.getElementById('answer-buttons')
    //question container
@@ -21,15 +21,16 @@ let shuffledQuestions, currentQuestionIndex
 startButton.addEventListener('click', startGame)
 //Add event listener for when start game begins, timer begins
 startButton.addEventListener('click', countDown)
-//countdown timer
 
+//COUNTDOWN TIMER
 
 function countDown() {
    var timeleft = 60;
        var downloadTimer = setInterval(function(){
+        
            if(timeleft <= 0) {
                clearInterval(downloadTimer);
-               document.getElementById('countdown').innerHTML = 'Finished';
+               document.getElementById('countdown').innerHTML = 'Game Over';
            } else {
                document.getElementById('countdown').innerHTML = timeleft + ' seconds';
            }
@@ -49,7 +50,7 @@ answerButton.addEventListener('click', function(event){
        var correct = questions[currentQuestionIndex].correct
        if (choice === correct){
            //timer needs to be added here
-           document.getElementById('countdown').innerHTML = 'finished'
+           document.getElementById('countdown').innerHTML = ' '
            currentQuestionIndex++
            //display next question
            displayQuestion()
@@ -68,10 +69,21 @@ answerButton.addEventListener('click', function(event){
    }
 })
 //create list for high scores
-let initial = document.getElementById('initial').value;
-console.log(initial);
-let time = document.getElementById('countDown').value;
-console.log(time);
+// let initial = document.getElementById('initial').value;
+// console.log(initial);
+// let time = document.getElementById('countDown').value;
+// console.log(time);
+
+//CREATE HIGH SCORE LIST
+function checkHighScore(score) {
+    const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) ?? [];
+    const lowestScore = highScores[NO_OF_HIGH_SCORES - 1]?.score ?? 0;
+
+    if (score > lowestScore) {
+        saveHighScore(score, highScores); 
+        showHighScores();
+    }
+}
 
 
 //function when the start of the game begins
@@ -145,6 +157,7 @@ function setStatusClass(element, correct) {
        element.classList.add('wrong')
    }
 }
+
 
 //create list of questions in the form of an array, with answers as another array.
 const questions = [
